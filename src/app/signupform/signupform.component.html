@@ -1,0 +1,28 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div formGroupName="account">
+      <div class="form-group">
+          <label for="userName">
+          UserName
+          </label>
+          <input id="userName" type="text" class="form-control" formControlName="username" autocomplete="off">
+          
+          <div class="alert alert-danger" *ngIf="username.touched && username.invalid">
+            
+            <div  *ngIf="username.errors.required">First name is required</div>
+            <div *ngIf="username.errors.minlength">UserName should be mmin{{username.errors.minlength.requiredLength}}</div>
+            <div  *ngIf="username.errors.cannotContainSpace">username can not contain space</div>
+            <div  *ngIf="username.errors.shouldbeUnique">username already existed</div>
+          </div>
+          </div>
+          <div class="form-group">
+              <label for="password">
+              Password
+              </label>
+              <input  id="password" type="password" class="form-control" formControlName="password">
+              
+              </div>
+  </div>
+
+    <button class="btn btn-primary">Sign up</button>
+
+</form>

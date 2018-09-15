@@ -1,0 +1,17 @@
+<!-- <Button class="btn btn-primary" (click)="onAdd()">Add</Button>
+<span>{{courses.title | summary:10}}</span>
+<span>{{courses.price| currency:'INR':true }}</span>
+<ul>
+<li *ngFor="let course of course"><span *ngIf="isEven">(Even)</span>{{i}}---------{{course.name}}
+<button class="btn btn-danger" (click)="onRemove(course)">Remove</button>
+<button class="btn btn-success" (click)="onUpdate(course)">Update</button>
+</li>
+
+</ul> -->
+
+<button class="btn btn-success" (click)="loadCourses()">Load Courses</button>
+<ul>
+    <li *ngFor="let course of course"><span *ngIf="isEven">(Even)</span>{{i}}---------{{course.name}}
+    <button class="btn btn-danger" (click)="onRemove(course)">Remove</button>
+    <button class="btn btn-success" (click)="onUpdate(course)">Update</button>
+    </li>
